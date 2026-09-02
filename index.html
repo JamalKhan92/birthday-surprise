@@ -1043,6 +1043,9 @@ h1 span {
 
 <body>
 
+<!-- MUSIC AUDIO TAG (Added here) -->
+<audio id="bgMusic" src="Saiyaara Title Song Ahaan Panday, Aneet Padda Tanishk Bagchi, Faheem A, Arslan N Irshad Kamil.mp3" loop></audio>
+
 
 <!-- ===================================
      FLOATING BACKGROUND
@@ -1473,6 +1476,16 @@ notOpenBtn.addEventListener("click", function(e) {
 });
 
 function openBirthdayWish() {
+    
+    // ======== PLAY MUSIC HERE ========
+    const bgMusic = document.getElementById("bgMusic");
+    if (bgMusic) {
+        bgMusic.play().catch(function(error) {
+            console.log("Audio play failed:", error);
+        });
+    }
+    // =================================
+
     createConfetti(55);
     openingHint.innerText = "Opening something special for Perry... 💗";
     openingScreen.classList.add("is-leaving");
